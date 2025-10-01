@@ -134,7 +134,7 @@ export default function Settings() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-foreground">Settings</h1>
-          <p className="text-muted-foreground">Manage your Two Rivers Platinum account and system preferences</p>
+          <p className="text-muted-foreground">Manage your Fleet Tracker account and system preferences</p>
         </div>
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
@@ -232,7 +232,7 @@ export default function Settings() {
                   System Preferences
                 </CardTitle>
                 <CardDescription>
-                  Customize your Two Rivers Platinum experience
+                  Customize your Fleet Tracker experience
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -331,7 +331,7 @@ export default function Settings() {
                   Notification Settings
                 </CardTitle>
                 <CardDescription>
-                  Configure how you receive notifications from Two Rivers Platinum
+                  Configure how you receive notifications from Fleet Tracker
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -483,7 +483,7 @@ export default function Settings() {
             <Card className="bg-card/80 backdrop-blur border-border shadow-elegant">
               <CardHeader>
                 <CardTitle>Account Information</CardTitle>
-                <CardDescription>Your Two Rivers Platinum account details</CardDescription>
+                <CardDescription>Your Fleet Tracker account details</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -516,7 +516,7 @@ export default function Settings() {
                   Create New Admin
                 </CardTitle>
                 <CardDescription>
-                  Add new administrator accounts to Two Rivers Platinum
+                  Add new administrator accounts to Fleet Tracker
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">

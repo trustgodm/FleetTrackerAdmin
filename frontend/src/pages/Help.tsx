@@ -79,7 +79,7 @@ export default function Help() {
   const quickGuides = [
     {
       title: "Getting Started",
-      description: "Learn the basics of Two Rivers Platinum fleet management",
+      description: "Learn the basics of Fleet Tracker fleet management",
       icon: BookOpen,
       link: "#"
     },
@@ -131,7 +131,7 @@ export default function Help() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-foreground">Help Center</h1>
-          <p className="text-muted-foreground">Get help and support for Two Rivers Platinum fleet management system</p>
+          <p className="text-muted-foreground">Get help and support for Fleet Tracker fleet management system</p>
         </div>
 
         <Tabs defaultValue="faq" className="space-y-6">
@@ -150,7 +150,7 @@ export default function Help() {
                   Search FAQ
                 </CardTitle>
                 <CardDescription>
-                  Find answers to common questions about Two Rivers Platinum
+                  Find answers to common questions about Fleet Tracker
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -170,7 +170,7 @@ export default function Help() {
               <CardHeader>
                 <CardTitle>Frequently Asked Questions</CardTitle>
                 <CardDescription>
-                  Common questions and answers about using Two Rivers Platinum
+                  Common questions and answers about using Fleet Tracker
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -198,7 +198,7 @@ export default function Help() {
                   Quick Start Guides
                 </CardTitle>
                 <CardDescription>
-                  Step-by-step guides to help you get the most out of Two Rivers Platinum
+                  Step-by-step guides to help you get the most out of Fleet Tracker
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -291,7 +291,7 @@ export default function Help() {
                 <CardHeader>
                   <CardTitle>Support Information</CardTitle>
                   <CardDescription>
-                    Multiple ways to get help with Two Rivers Platinum
+                    Multiple ways to get help with Fleet Tracker
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -318,7 +318,7 @@ export default function Help() {
                       <MapPin className="h-5 w-5 text-primary" />
                       <div>
                         <p className="font-medium">Office Location</p>
-                        <p className="text-sm text-muted-foreground">Two Rivers Platinum HQ</p>
+                        <p className="text-sm text-muted-foreground">Fleet Tracker HQ</p>
                         <p className="text-xs text-muted-foreground">123 Fleet Street, Suite 100</p>
                       </div>
                     </div>

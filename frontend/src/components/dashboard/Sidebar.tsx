@@ -36,7 +36,7 @@ export function Sidebar() {
               <Car className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-lg font-semibold text-foreground">Two Rivers</h1>
+              <h1 className="text-lg font-semibold text-foreground">Fleet Tracker</h1>
               <p className="text-xs text-muted-foreground">Fleet Management</p>
             </div>
           </div>

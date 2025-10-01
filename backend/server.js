@@ -122,8 +122,8 @@ app.use(errorHandler);
 // Start server immediately
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT} in ${NODE_ENV} mode`);
-  console.log(`📚 API Documentation: http://${process.env.BACKEND_URL}:${PORT}/api-docs`);
-  console.log(`❤️  Health check: http://${process.env.BACKEND_URL}:${PORT}/health`);
+  console.log(`📚 API Documentation: http://${process.env.BACKEND_URL}/api-docs`);
+  console.log(`❤️  Health check: http://${process.env.BACKEND_URL}/health`);
 });
 
 // Test database connection in background (non-blocking)

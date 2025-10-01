@@ -126,7 +126,7 @@ const Index = () => {
           {/* Header */}
           <div>
             <h1 className="text-3xl font-bold text-foreground">Overview</h1>
-            <p className="text-muted-foreground mt-1">Fleet management dashboard for Two Rivers Platinum</p>
+            <p className="text-muted-foreground mt-1">Fleet management dashboard for Fleet Tracker</p>
           </div>
 
           {/* Metrics Grid */}
