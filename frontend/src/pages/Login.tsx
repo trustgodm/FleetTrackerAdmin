@@ -144,7 +144,7 @@ export default function Login() {
             <Card>
               <p>dummy login details</p>
               <p>coyno_id: 123456</p>
-              <p>password: 123456</p>
+              <p>password: admin123</p>
               </Card>
          
           </CardContent>
