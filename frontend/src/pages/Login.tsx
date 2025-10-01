@@ -7,8 +7,10 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, Eye, EyeOff, Shield, Truck } from "lucide-react";
 import { authAPI } from "@/services/api";
 import { useNavigate } from "react-router-dom";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export default function Login() {
+  const analytics = useAnalytics();
   const [formData, setFormData] = useState({
      
     coyno_id: "",
@@ -37,6 +39,12 @@ export default function Login() {
       const response = await authAPI.login(loginData);
       
       if (response.success) {
+        // Track successful login
+        analytics.trackUserAction('login_success', 'authentication', {
+          user_role: response.data.user?.user_role,
+          department_id: response.data.user?.department_id
+        });
+        
         // Store token and user data
         localStorage.setItem('authToken', response.data.token);
         localStorage.setItem('userData', JSON.stringify(response.data.user));
@@ -44,6 +52,9 @@ export default function Login() {
         // Redirect to dashboard
         navigate('/');
       } else {
+        analytics.trackUserAction('login_failed', 'authentication', {
+          reason: response.message || 'Login failed'
+        });
         setError(response.message || 'Login failed');
       }
     } catch (err: any) {
@@ -129,7 +140,12 @@ export default function Login() {
                 )}
               </Button>
             </form>
-            
+            {/*dummy login details*/}
+            <Card>
+              <p>dummy login details</p>
+              <p>coyno_id: 123456</p>
+              <p>password: 123456</p>
+              </Card>
          
           </CardContent>
         </Card>

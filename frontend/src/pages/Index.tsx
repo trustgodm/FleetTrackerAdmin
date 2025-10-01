@@ -8,8 +8,10 @@ import { NotificationPanel } from "@/components/dashboard/NotificationPanel";
 import { Car, Users, Fuel, MapPin, TrendingUp, AlertTriangle, Loader2 } from "lucide-react";
 import { vehiclesAPI, departmentsAPI, tripsAPI } from "@/services/api";
 import { toast } from "sonner";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const Index = () => {
+  const analytics = useAnalytics();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [dashboardData, setDashboardData] = useState({
@@ -79,6 +81,7 @@ const Index = () => {
   };
 
   useEffect(() => {
+    analytics.trackPageView('dashboard');
     fetchDashboardData();
   }, []);
 

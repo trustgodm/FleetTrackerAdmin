@@ -9,8 +9,10 @@ import { FleetStatsCards } from "@/components/fleet/FleetStatsCards";
 import { VehicleInventory } from "@/components/fleet/VehicleInventory";
 import { AddVehicleDialog } from "@/components/fleet/AddVehicleDialog";
 import { VehicleDetailsDialog } from "@/components/fleet/VehicleDetailsDialog";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 function Fleet() {
+  const analytics = useAnalytics();
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
   const [departments, setDepartments] = useState<Department[]>([]);
   const [loading, setLoading] = useState(false);
@@ -55,6 +57,7 @@ function Fleet() {
   };
 
   useEffect(() => {
+    analytics.trackPageView('fleet');
     getVehicles();
     getDepartments();
   }, []);
@@ -98,15 +101,23 @@ function Fleet() {
       const response = await vehiclesAPI.create(vehicleData);
       
       if (response.success) {
+        analytics.trackFleetAction('vehicle_added', response.data?.id, {
+          make: vehicleData.make,
+          model: vehicleData.model,
+          year: vehicleData.year,
+          fuel_type: vehicleData.fuel_type
+        });
         toast.success("Vehicle added successfully");
         getVehicles();
         resetForm();
         setIsAddDialogOpen(false);
       } else {
+      
         toast.error(response.message || "Failed to add vehicle");
       }
     } catch (error: any) {
       console.error("Error adding vehicle:", error);
+   
       toast.error(error.message || "Failed to add vehicle");
     } finally {
       setIsSubmitting(false);
